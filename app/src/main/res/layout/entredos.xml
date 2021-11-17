@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:screenOrientation="landscape">
     
     <TableLayout
         android:layout_width="match_parent"
@@ -122,7 +122,7 @@
             </ImageButton>
         </TableRow>
 
-        fila 3
+        <!--fila 3-->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -177,6 +177,19 @@
                 android:layout_column="0">
             </ImageButton>
         </TableRow>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginLeft="35dp"
+                android:text="Conectar"/>
+        </LinearLayout>
 
     </TableLayout>
 
