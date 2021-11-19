@@ -1,15 +1,17 @@
 package com.example.adivinaquien
 
 import android.app.Activity
+import android.content.pm.ActivityInfo
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
-class Entredos : AppCompatActivity() {
+class Entredos : Activity() {
 
     //img's
     var img01 : ImageButton = findViewById(R.id.btn01)
@@ -36,15 +38,14 @@ class Entredos : AppCompatActivity() {
     var img22 : ImageButton = findViewById(R.id.btn22)
     var img23 : ImageButton = findViewById(R.id.btn23)
     var img24 : ImageButton = findViewById(R.id.btn24)
-    /*img01,img02,img03,img04,img05,img06,img07,img08,
-    img09,img10,img11,img12,img13,img14,img15,img16,
-    img17,img18,img19,img20,img21,img22,img23,img24 : Image*/
 
-    //var tablero : ImageButton
+    //lateinit var tablero : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        setContentView(R.layout.entredos)
+        //super.onCreate(savedInstanceState, persistentState)
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+        //this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        //setContentView(R.layout.activity_main)
 
         val tablero = arrayOf<ImageButton>(
             img01,img02,img03,img04,img05,img06,img07,img08,
