@@ -20,49 +20,65 @@
                 android:id="@+id/btn01"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per01"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn02"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per02"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn03"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per03"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn04"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per04"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn05"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per05"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn06"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per06"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn07"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per07"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn08"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per08"
+                android:scaleType="centerCrop">
             </ImageButton>
         </TableRow>
 
@@ -76,49 +92,65 @@
                 android:id="@+id/btn09"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per09"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn10"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per10"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn11"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per11"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn12"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per12"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn13"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per13"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn14"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per14"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn15"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per15"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn16"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per16"
+                android:scaleType="centerCrop">
             </ImageButton>
         </TableRow>
 
@@ -132,49 +164,65 @@
                 android:id="@+id/btn17"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per17"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn18"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per18"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn19"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per19"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn20"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per20"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn21"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per21"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn22"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per22"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn23"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per23"
+                android:scaleType="centerCrop">
             </ImageButton>
             <ImageButton
                 android:id="@+id/btn24"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:src="@drawable/per24"
+                android:scaleType="centerCrop">
             </ImageButton>
         </TableRow>
 

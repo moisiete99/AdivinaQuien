@@ -1,9 +1,12 @@
 package com.example.adivinaquien
 
 import android.app.Activity
+import android.content.res.Resources
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class Entredos : AppCompatActivity() {
