@@ -47,11 +47,11 @@ class Entredos : AppCompatActivity() {
     lateinit var btnChat : Button
 
     //variables del juego
-    var tablero : ArrayList<ImageButton> = ArrayList()
-    var arrayDesordenado : ArrayList<Int> = ArrayList()
+    var tablero = arrayListOf<ImageButton>()
+    var arrayDesordenado = arrayListOf<Int>()
 
     //imagenes
-    var imagenes : ArrayList<ImageButton> = ArrayList()
+    var imagenes = arrayListOf<Int>()
     var fondo : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,11 +66,11 @@ class Entredos : AppCompatActivity() {
             img09,img10,img11,img12,img13,img14,img15,img16,
             img17,img18,img19,img20,img21,img22,img23,img24)*/
 
-        //init()
+        init()
     }
 
     fun cargarTablero() {
-        img01= findViewById(R.id.btn01)
+        img01 = findViewById(R.id.btn01)
         img02 = findViewById(R.id.btn02)
         img03 = findViewById(R.id.btn03)
         img04 = findViewById(R.id.btn04)
@@ -97,7 +97,12 @@ class Entredos : AppCompatActivity() {
 
         imgPersonaje = findViewById(R.id.btnPersonaje)
 
-        tablero[0] = img01
+        tablero.addAll(listOf(
+            img01,img02,img03,img04,img05,img06,img07,img08,
+            img09,img10,img11,img12,img13,img14,img15,img16,
+            img17,img18,img19,img20,img21,img22,img23,img24)
+        )
+        /*tablero[0] = img01
         tablero[1] = img02
         tablero[2] = img03
         tablero[3] = img04
@@ -120,15 +125,38 @@ class Entredos : AppCompatActivity() {
         tablero[20] = img21
         tablero[21] = img22
         tablero[22] = img23
-        tablero[23] = img24
-
+        tablero[23] = img24*/
     }
     fun cargarBotones(){
         btnConectar = findViewById(R.id.btnConectar)
         btnChat = findViewById(R.id.btnChat)
     }
     fun cargarImagenes(){
-        imagenes[0].setImageResource(R.drawable.per01)
+        imagenes.add(R.drawable.per01)
+        imagenes.add(R.drawable.per02)
+        imagenes.add(R.drawable.per03)
+        imagenes.add(R.drawable.per04)
+        imagenes.add(R.drawable.per05)
+        imagenes.add(R.drawable.per06)
+        imagenes.add(R.drawable.per07)
+        imagenes.add(R.drawable.per08)
+        imagenes.add(R.drawable.per09)
+        imagenes.add(R.drawable.per10)
+        imagenes.add(R.drawable.per11)
+        imagenes.add(R.drawable.per12)
+        imagenes.add(R.drawable.per13)
+        imagenes.add(R.drawable.per14)
+        imagenes.add(R.drawable.per15)
+        imagenes.add(R.drawable.per16)
+        imagenes.add(R.drawable.per17)
+        imagenes.add(R.drawable.per18)
+        imagenes.add(R.drawable.per19)
+        imagenes.add(R.drawable.per20)
+        imagenes.add(R.drawable.per21)
+        imagenes.add(R.drawable.per22)
+        imagenes.add(R.drawable.per23)
+        imagenes.add(R.drawable.per24)
+        /*imagenes[0].setImageResource(R.drawable.per01)
         imagenes[1].setImageResource(R.drawable.per02)
         imagenes[2].setImageResource(R.drawable.per03)
         imagenes[3].setImageResource(R.drawable.per04)
@@ -151,7 +179,7 @@ class Entredos : AppCompatActivity() {
         imagenes[20].setImageResource(R.drawable.per21)
         imagenes[21].setImageResource(R.drawable.per22)
         imagenes[22].setImageResource(R.drawable.per23)
-        imagenes[23].setImageResource(R.drawable.per24)
+        imagenes[23].setImageResource(R.drawable.per24)*/
         /*imagenes = arrayOf(
             R.drawable.per01,
             R.drawable.per02,
@@ -182,12 +210,15 @@ class Entredos : AppCompatActivity() {
         fondo = R.drawable.fondo
     }
     fun barajar(longitud : Int) : ArrayList<Int> {
-        var result : ArrayList<Int> = ArrayList()
-        for (i in 1..longitud){
-            result.add(i%longitud)
+        var result = arrayListOf<Int>()
+        for (i in 0..longitud-1){
+            //result.add(i%longitud)
+            result.add(i)
         }
         result.shuffle()
         println(Arrays.toString(result.toArray()))
+        println("tablero: " +tablero.size)
+        println("longitud: " +longitud)
         return result
     }
 
@@ -195,11 +226,12 @@ class Entredos : AppCompatActivity() {
         cargarTablero()
         cargarBotones()
         cargarImagenes()
-        /*arrayDesordenado = barajar(imagenes.size)
-        for (i in 0..tablero.size){
-            //tablero[i]?.scaleType
-            tablero[i].setImageResource(imagenes[i])
-        }*/
+        arrayDesordenado = barajar(imagenes.size)
+        println("Array Desordenado: " +arrayDesordenado.size)
+        for (i in 0..tablero.size - 1){
+            tablero[i].scaleType = ImageView.ScaleType.CENTER_CROP
+            tablero[i].setImageResource(imagenes[arrayDesordenado[i]])
+        }
     }
 
     /*fun asignarCarta(minimo : Int, maximo : Int): Int {
