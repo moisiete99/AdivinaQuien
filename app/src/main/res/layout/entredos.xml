@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <!--fila 1-->
@@ -229,14 +229,39 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp">
+            android:gravity="center">
 
             <Button
+                android:id="@+id/btnConectar"
                 android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_marginLeft="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="80dp"
                 android:text="Conectar"/>
+
+            <ImageButton
+                android:id="@+id/btnPersonaje"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_column="0"
+                android:scaleType="centerCrop">
+            </ImageButton>
+
+            <Button
+                android:id="@+id/btnChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="95dp"
+                android:text="Chat"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+
+
+
         </LinearLayout>
 
     </TableLayout>

@@ -13,15 +13,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnvs2 : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE) //quitamos title Bar
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) //forzamos orientacion horizontal
-        setContentView(R.layout.entredos)
+        //supportRequestWindowFeature(Window.FEATURE_NO_TITLE) //quitamos title Bar
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) //forzamos orientacion horizontal
+        setContentView(R.layout.activity_main)
 
-        /*btnvs2 = findViewById(R.id.btnVS2)
+        btnvs2 = findViewById(R.id.btnVS2)
         btnvs2.setOnClickListener{
             println("Iniciando 2vs2")
             iniciarJuego2()
-        }*/
+        }
     }
 
     fun iniciarJuego2(){
