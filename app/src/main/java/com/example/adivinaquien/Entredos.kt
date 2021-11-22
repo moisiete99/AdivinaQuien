@@ -49,6 +49,7 @@ class Entredos : AppCompatActivity() {
     //variables del juego
     var tablero = arrayListOf<ImageButton>()
     var arrayDesordenado = arrayListOf<Int>()
+    var bloqueo : Boolean = false
 
     //imagenes
     var imagenes = arrayListOf<Int>()
@@ -160,6 +161,16 @@ class Entredos : AppCompatActivity() {
         imgPersonaje.setImageResource(imagenes[arrayDesordenado[0]])
 
         //Comenzamos a jugar, bajar personajes
-
+        for (i in 0..tablero.size - 1){
+            //habilitamos tablero, botones
+            tablero[i].isEnabled = true
+            //Al seleccionar, tocar
+            tablero[i].setOnClickListener{
+                if(!bloqueo){
+                    tablero[i].setImageResource(fondo)
+                    tablero[i].isEnabled = false
+                }
+            }
+        }
     }
 }
