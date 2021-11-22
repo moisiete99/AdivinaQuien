@@ -14,7 +14,7 @@ import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 import kotlin.collections.ArrayList
 
-class Entredos : AppCompatActivity() {
+abstract class Entredos : AppCompatActivity() {
 
     ////variables para los componentes
     lateinit var img01 : ImageButton
@@ -49,6 +49,8 @@ class Entredos : AppCompatActivity() {
     //variables del juego
     var tablero = arrayListOf<ImageButton>()
     var arrayDesordenado = arrayListOf<Int>()
+    var bloqueo : Boolean = false
+    //var primero : ImageButton
 
     //imagenes
     var imagenes = arrayListOf<Int>()
@@ -59,12 +61,6 @@ class Entredos : AppCompatActivity() {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE) //quitamos title Bar
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) //forzamos orientacion horizontal
         setContentView(R.layout.entredos)
-
-
-        /*val tablero = arrayOf<ImageButton>(
-            img01,img02,img03,img04,img05,img06,img07,img08,
-            img09,img10,img11,img12,img13,img14,img15,img16,
-            img17,img18,img19,img20,img21,img22,img23,img24)*/
 
         init()
     }
@@ -102,30 +98,6 @@ class Entredos : AppCompatActivity() {
             img09,img10,img11,img12,img13,img14,img15,img16,
             img17,img18,img19,img20,img21,img22,img23,img24)
         )
-        /*tablero[0] = img01
-        tablero[1] = img02
-        tablero[2] = img03
-        tablero[3] = img04
-        tablero[4] = img05
-        tablero[5] = img06
-        tablero[6] = img07
-        tablero[7] = img08
-        tablero[8] = img09
-        tablero[9] = img10
-        tablero[10] = img11
-        tablero[11] = img12
-        tablero[12] = img13
-        tablero[13] = img14
-        tablero[14] = img15
-        tablero[15] = img16
-        tablero[16] = img17
-        tablero[17] = img18
-        tablero[18] = img19
-        tablero[19] = img20
-        tablero[20] = img21
-        tablero[21] = img22
-        tablero[22] = img23
-        tablero[23] = img24*/
     }
     fun cargarBotones(){
         btnConectar = findViewById(R.id.btnConectar)
@@ -156,56 +128,6 @@ class Entredos : AppCompatActivity() {
         imagenes.add(R.drawable.per22)
         imagenes.add(R.drawable.per23)
         imagenes.add(R.drawable.per24)
-        /*imagenes[0].setImageResource(R.drawable.per01)
-        imagenes[1].setImageResource(R.drawable.per02)
-        imagenes[2].setImageResource(R.drawable.per03)
-        imagenes[3].setImageResource(R.drawable.per04)
-        imagenes[4].setImageResource(R.drawable.per05)
-        imagenes[5].setImageResource(R.drawable.per06)
-        imagenes[6].setImageResource(R.drawable.per07)
-        imagenes[7].setImageResource(R.drawable.per08)
-        imagenes[8].setImageResource(R.drawable.per09)
-        imagenes[9].setImageResource(R.drawable.per10)
-        imagenes[10].setImageResource(R.drawable.per11)
-        imagenes[11].setImageResource(R.drawable.per12)
-        imagenes[12].setImageResource(R.drawable.per13)
-        imagenes[13].setImageResource(R.drawable.per14)
-        imagenes[14].setImageResource(R.drawable.per15)
-        imagenes[15].setImageResource(R.drawable.per16)
-        imagenes[16].setImageResource(R.drawable.per17)
-        imagenes[17].setImageResource(R.drawable.per18)
-        imagenes[18].setImageResource(R.drawable.per19)
-        imagenes[19].setImageResource(R.drawable.per20)
-        imagenes[20].setImageResource(R.drawable.per21)
-        imagenes[21].setImageResource(R.drawable.per22)
-        imagenes[22].setImageResource(R.drawable.per23)
-        imagenes[23].setImageResource(R.drawable.per24)*/
-        /*imagenes = arrayOf(
-            R.drawable.per01,
-            R.drawable.per02,
-            R.drawable.per03,
-            R.drawable.per04,
-            R.drawable.per05,
-            R.drawable.per06,
-            R.drawable.per07,
-            R.drawable.per08,
-            R.drawable.per09,
-            R.drawable.per10,
-            R.drawable.per11,
-            R.drawable.per12,
-            R.drawable.per13,
-            R.drawable.per14,
-            R.drawable.per15,
-            R.drawable.per16,
-            R.drawable.per17,
-            R.drawable.per18,
-            R.drawable.per19,
-            R.drawable.per20,
-            R.drawable.per21,
-            R.drawable.per22,
-            R.drawable.per23,
-            R.drawable.per24,
-        )*/
 
         fondo = R.drawable.fondo
     }
@@ -221,6 +143,15 @@ class Entredos : AppCompatActivity() {
         println("longitud: " +longitud)
         return result
     }
+    /*fun comprobar(i:Int, imgb: ImageButton) {
+        if (primero==null){
+            primero=imgb
+            primero.scaleType = ImageView.ScaleType.CENTER_CROP
+            primero.setImageResource(fondo)
+            //desabilitamos personaje
+            primero.isEnabled = false
+        }
+    }*/
 
     fun init() {
         cargarTablero()
@@ -228,13 +159,29 @@ class Entredos : AppCompatActivity() {
         cargarImagenes()
         arrayDesordenado = barajar(imagenes.size)
         println("Array Desordenado: " +arrayDesordenado.size)
+
+        //cargamos personajes aleatoriamente en el tablero
         for (i in 0..tablero.size - 1){
             tablero[i].scaleType = ImageView.ScaleType.CENTER_CROP
             tablero[i].setImageResource(imagenes[arrayDesordenado[i]])
+            //tablero[i].setImageResource(fondo)
         }
-    }
 
-    /*fun asignarCarta(minimo : Int, maximo : Int): Int {
-        return ThreadLocalRandom.current().nextInt(minimo, maximo)
-    }*/
+        //cargamos personaje aleatorio de jugador, el de arrayDesordenado pos 0
+        imgPersonaje.setImageResource(imagenes[arrayDesordenado[0]])
+
+        //Comenzamos a jugar, bajar personajes
+        /*for (i in 0..tablero.size - 1){
+            val j = i
+            //habilitamos tablero, botones
+            tablero[i].isEnabled = true
+            //Al seleccionar, tocar
+            tablero[i].setOnClickListener{
+                if(!bloqueo){
+                    //comprobar(j, tablero[j])
+                    tablero[i].setImageResource(fondo)
+                }
+            }
+        }*/
+    }
 }
