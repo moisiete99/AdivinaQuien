@@ -148,9 +148,18 @@ class Entredos : AppCompatActivity() {
         cargarImagenes()
         arrayDesordenado = barajar(imagenes.size)
         println("Array Desordenado: " +arrayDesordenado.size)
+
+        //cargamos personajes aleatoriamente en el tablero
         for (i in 0..tablero.size - 1){
             tablero[i].scaleType = ImageView.ScaleType.CENTER_CROP
             tablero[i].setImageResource(imagenes[arrayDesordenado[i]])
+            //tablero[i].setImageResource(fondo)
         }
+
+        //cargamos personaje aleatorio de jugador, el de arrayDesordenado pos 0
+        imgPersonaje.setImageResource(imagenes[arrayDesordenado[0]])
+
+        //Comenzamos a jugar, bajar personajes
+
     }
 }
