@@ -25,6 +25,7 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/edt_background"
         android:hint="Email"
+        android:inputType="textWebEmailAddress"
         android:paddingLeft="13dp" />
 
     <EditText
@@ -37,6 +38,7 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/edt_background"
         android:hint="Password"
+        android:inputType="textWebPassword"
         android:paddingLeft="13dp" />
 
     <Button

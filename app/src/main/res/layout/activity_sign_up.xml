@@ -36,6 +36,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edt_background"
+        android:inputType="textWebEmailAddress"
         android:hint="Email"
         android:paddingLeft="13dp" />
 
@@ -48,6 +49,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edt_background"
+        android:inputType="textWebPassword"
         android:hint="Password"
         android:paddingLeft="13dp" />
 
