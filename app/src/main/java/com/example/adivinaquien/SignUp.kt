@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class SignUp : AppCompatActivity() {
@@ -17,6 +19,7 @@ class SignUp : AppCompatActivity() {
     lateinit var edtPassword: EditText
     lateinit var btnSignup: Button
     lateinit var mAuth : FirebaseAuth
+    lateinit var mDbRef:DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,18 +34,21 @@ class SignUp : AppCompatActivity() {
         btnSignup = findViewById(R.id.btn_signup)
 
         btnSignup.setOnClickListener {
+            val name=edtName.text.toString()
             val email = edtEmail.text.toString()
             val password=edtPassword.text.toString()
 
-            signUp(email,password)
+            signUp(name, email,password)
         }
     }
 
-    private fun signUp(email: String, password: String) {
+    private fun signUp(name: String, email: String, password: String) {
         //logica para crear usuario
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    //añadimos usuario a la BD
+                    addUserToDatabase(name, email,mAuth.currentUser?.uid!!)
                     //pasamos al menu
                     val intent = Intent(this@SignUp, MainActivity::class.java)
                     startActivity(intent)
@@ -50,5 +56,11 @@ class SignUp : AppCompatActivity() {
                     Toast.makeText(this@SignUp, "Ocurrio un error", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    private fun addUserToDatabase(name: String, email: String, uid: String) {
+        mDbRef = FirebaseDatabase.getInstance().getReference()
+
+        mDbRef.child("user").child(uid).setValue(User(name, email, uid))
     }
 }
