@@ -50,7 +50,7 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/edt_background"
         android:inputType="textWebPassword"
-        android:hint="Password"
+        android:hint="Password [6 characters]"
         android:paddingLeft="13dp" />
 
     <Button

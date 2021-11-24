@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "383071568307",
+    "project_id": "adivinaquien-36881",
+    "storage_bucket": "adivinaquien-36881.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383071568307:android:2fe64ea81767026b220bc6",
+        "android_client_info": {
+          "package_name": "com.example.adivinaquien"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "383071568307-nglmps0kqglunvihq78qektbu8d4j541.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcVIk6489kDpebsLO002uVLGF4O9xVCYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "383071568307-nglmps0kqglunvihq78qektbu8d4j541.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
