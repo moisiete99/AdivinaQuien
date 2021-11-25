@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdivinaQuien">
         <activity
-            android:name=".entreuno"
+            android:name=".EntreUno"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

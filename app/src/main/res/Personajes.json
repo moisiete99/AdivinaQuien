@@ -1,0 +1,52 @@
+[
+  {
+      "nombre": "Esther","genero": "mujer","piel": "clara",
+      "cabello": "castaño","lentes": "no","bigote": "no",
+      "barba": "no","corbata": "no","playera": "verde","num": "01"
+    },
+    {
+      "nombre": "Roger","genero": "hombre","piel": "oscura",
+      "cabello": "castaño","lentes": "si","bigote": "no",
+      "barba": "si","corbata": "no","playera": "amarilla","num": "02"
+    },
+    {
+      "nombre": "Sarai","genero": "mujer","piel": "morena",
+      "cabello": "castaño","lentes": "no","bigote": "no",
+      "barba": "no","corbata": "no","playera": "azul","num": "03"
+    },
+    {
+      "nombre": "Tino","genero": "hombre","piel": "clara",
+      "cabello": "rubio","lentes": "no","bigote": "no",
+      "barba": "no","corbata": "no","playera": "azul","num": "04"
+    },
+    {
+      "nombre": "Otto","genero": "hombre","piel": "morena",
+      "cabello": "castaño","lentes": "no","bigote": "no",
+      "barba": "si","corbata": "no","playera": "azul","num": "05"
+    },
+    {
+      "nombre": "Lola","genero": "mujer","piel": "clara",
+      "cabello": "pelirrojo","lentes": "no","bigote": "no",
+      "barba": "no","corbata": "no","playera": "azul","num": "06"
+    },
+    {
+      "nombre": "Marcos","genero": "hombre","piel": "morena",
+      "cabello": "castaño","lentes": "no","bigote": "si",
+      "barba": "no","corbata": "no","playera": "azul","num": "07"
+    },
+    {
+      "nombre": "Africa","genero": "mujer","piel": "clara",
+      "cabello": "oscuro","lentes": "no","bigote": "no",
+      "barba": "no","corbata": "no","playera": "rosa","num": "08"
+    },
+    {
+      "nombre": "Thania","genero": "mujer","piel": "morena",
+      "cabello": "castaño","lentes": "no","bigote": "no",
+      "barba": "no","corbata": "no","playera": "azul","num": "09"
+    },
+    {
+      "nombre": "Beth","genero": "hombre","piel": "morena",
+      "cabello": "castaño","lentes": "no","bigote": "no",
+      "barba": "no","corbata": "si","playera": "azul","num": "10"
+    }
+]

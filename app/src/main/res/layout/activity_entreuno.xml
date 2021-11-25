@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".entreuno">
+    tools:context=".EntreUno">
 
     <TableLayout
         android:layout_width="477dp"
@@ -16,51 +16,45 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical">
-
             <ImageButton
                 android:id="@+id/btnP1"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/esther01" />
-
             <ImageButton
                 android:id="@+id/btnP2"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/roger02" />
-
             <ImageButton
                 android:id="@+id/btnP3"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/sarai03" />
-
             <ImageButton
                 android:id="@+id/btnP4"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/tino04" />
-
             <ImageButton
                 android:id="@+id/btnP5"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/otto05" />
-
             <ImageButton
                 android:id="@+id/btnP6"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/lola06" />
@@ -74,47 +68,42 @@
             <ImageButton
                 android:id="@+id/btnP7"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/marcos07" />
-
             <ImageButton
                 android:id="@+id/btnP8"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/africa08" />
-
             <ImageButton
                 android:id="@+id/btnP9"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/thania09" />
-
             <ImageButton
                 android:id="@+id/btnP10"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/beth10" />
-
             <ImageButton
                 android:id="@+id/btnP11"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/orion11" />
-
             <ImageButton
                 android:id="@+id/btnP12"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/mika12" />
@@ -128,101 +117,89 @@
             <ImageButton
                 android:id="@+id/btnP13"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/nuth13" />
-
             <ImageButton
                 android:id="@+id/btnP14"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ra14" />
-
             <ImageButton
                 android:id="@+id/btnP15"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/isaac15" />
-
             <ImageButton
                 android:id="@+id/btnP16"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/carmen16" />
-
             <ImageButton
                 android:id="@+id/btnP17"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ramses17" />
-
             <ImageButton
                 android:id="@+id/btnP18"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/puca18" />
         </TableRow>
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical">
-
             <ImageButton
                 android:id="@+id/btnP19"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/goku19" />
-
             <ImageButton
                 android:id="@+id/btnP20"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/bielsa20" />
-
             <ImageButton
                 android:id="@+id/btnP21"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/gea21" />
-
             <ImageButton
                 android:id="@+id/btnP22"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/chica22" />
-
             <ImageButton
                 android:id="@+id/btnP23"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/xina23" />
-
             <ImageButton
                 android:id="@+id/btnP24"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
                 android:src="@drawable/tot24" />
@@ -232,32 +209,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnIniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iniciar"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btnIniciar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Iniciar"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tiempo "/>
+                android:text="Tiempo Usado "
+                android:textSize="22dp"/>
             <Chronometer
                 android:id="@+id/cronometro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00:00"/>
+                android:text="00:00"
+                android:textSize="22dp"/>
         </LinearLayout>
-        <TableLayout
+        <ListView
+            android:id="@+id/preguntas_list"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TableRow>
-
-            </TableRow>
-        </TableLayout>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </LinearLayout>
