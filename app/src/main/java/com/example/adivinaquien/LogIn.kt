@@ -15,11 +15,13 @@ class LogIn : AppCompatActivity() {
     lateinit var edtPassword: EditText
     lateinit var btnLogin: Button
     lateinit var btnSignup: Button
-    lateinit var mAuth : FirebaseAuth
+    lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
+
+        supportActionBar?.hide()
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -37,7 +39,7 @@ class LogIn : AppCompatActivity() {
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
 
-            login(email,password)
+            login(email, password)
 
             //LLamar al menu de opciones de juego
             /*val i = Intent(this, MainActivity::class.java)
@@ -50,7 +52,7 @@ class LogIn : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent(this@LogIn, MainActivity::class.java)
+                    val intent = Intent(this@LogIn, Chat::class.java) //MainActivity::class.java
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@LogIn, "Usuario no existente", Toast.LENGTH_SHORT).show()

@@ -18,15 +18,17 @@ class SignUp : AppCompatActivity() {
     lateinit var edtEmail: EditText
     lateinit var edtPassword: EditText
     lateinit var btnSignup: Button
-    lateinit var mAuth : FirebaseAuth
-    lateinit var mDbRef:DatabaseReference
+    lateinit var mAuth: FirebaseAuth
+    lateinit var mDbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        //mAuth = FirebaseAuth.getInstance()
-        mAuth = Firebase.auth
+        supportActionBar?.hide()
+
+        mAuth = FirebaseAuth.getInstance()
+        //mAuth = Firebase.auth
 
         edtName = findViewById(R.id.edt_name)
         edtEmail = findViewById(R.id.edt_email)
@@ -34,11 +36,11 @@ class SignUp : AppCompatActivity() {
         btnSignup = findViewById(R.id.btn_signup)
 
         btnSignup.setOnClickListener {
-            val name=edtName.text.toString()
+            val name = edtName.text.toString()
             val email = edtEmail.text.toString()
-            val password=edtPassword.text.toString()
+            val password = edtPassword.text.toString()
 
-            signUp(name, email,password)
+            signUp(name, email, password)
         }
     }
 
@@ -48,9 +50,10 @@ class SignUp : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     //añadimos usuario a la BD
-                    addUserToDatabase(name, email,mAuth.currentUser?.uid!!)
+                    addUserToDatabase(name, email, mAuth.currentUser?.uid!!)
                     //pasamos al menu
                     val intent = Intent(this@SignUp, MainActivity::class.java)
+                    finish()
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@SignUp, "Ocurrio un error", Toast.LENGTH_SHORT).show()
