@@ -16,7 +16,7 @@ import kotlin.collections.ArrayList
 
 class EntreUno : AppCompatActivity() {
 
-    /*lateinit var img01 : ImageButton
+    lateinit var img01 : ImageButton
     lateinit var img02 : ImageButton
     lateinit var img03 : ImageButton
     lateinit var img04 : ImageButton
@@ -40,7 +40,6 @@ class EntreUno : AppCompatActivity() {
     lateinit var img22 : ImageButton
     lateinit var img23 : ImageButton
     lateinit var img24 : ImageButton
-    lateinit var imgPersonaje : ImageButton
 
     //variables del juego
     var tablero = arrayListOf<ImageButton>()
@@ -49,7 +48,7 @@ class EntreUno : AppCompatActivity() {
 
     //imagenes
     var imagenes = arrayListOf<Int>()
-    var fondo : Int = 0*/
+    var fondo : Int = 0
 
     //Cronometro
     private lateinit var btnIniciar: Button
@@ -59,6 +58,8 @@ class EntreUno : AppCompatActivity() {
     //private var preguntasList:ListView = findViewById(R.id.preguntas_list)
     var arr = arrayListOf<String>()
 
+    var idPersonaje = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Pantalla completa
@@ -67,9 +68,8 @@ class EntreUno : AppCompatActivity() {
 
         setContentView(R.layout.activity_entreuno)
 
-        Cronometro()
         //leerJSON()
-        //init()
+        init()
     }
 
     /*fun leerJSON(){
@@ -96,7 +96,7 @@ class EntreUno : AppCompatActivity() {
         }
     }*/
 
-    fun Cronometro() {
+    fun cronometro() {
         //Cronometro
         btnIniciar = findViewById(R.id.btnIniciar)
         cronometro = findViewById(R.id.cronometro)
@@ -107,7 +107,11 @@ class EntreUno : AppCompatActivity() {
         }
     }
 
-    /*fun cargarTablero() {
+    fun Random.nextInt(range: IntRange): Int{
+        return range.start + nextInt(range.last - range.start)
+    }
+
+    fun cargarTablero() {
         img01 = findViewById(R.id.btnP1)
         img02 = findViewById(R.id.btnP2)
         img03 = findViewById(R.id.btnP3)
@@ -168,7 +172,7 @@ class EntreUno : AppCompatActivity() {
         imagenes.add(R.drawable.xina23)
         imagenes.add(R.drawable.tot24)
 
-        //fondo = R.drawable.fondo
+        fondo = R.drawable.fondo
     }
 
     fun barajar(longitud:Int): ArrayList<Int>{
@@ -184,6 +188,11 @@ class EntreUno : AppCompatActivity() {
     }
 
     fun init(){
+        //Asignamos el id del personaje
+        val random = Random()
+        idPersonaje = random.nextInt(1..24)
+
+        cronometro()
         cargarTablero()
         cargarImagenes()
         arrayDesordenado = barajar(imagenes.size)
@@ -197,7 +206,7 @@ class EntreUno : AppCompatActivity() {
         }
 
         //cargamos personaje aleatorio de jugador, el de arrayDesordenado pos 0
-        imgPersonaje.setImageResource(imagenes[arrayDesordenado[0]])
+        //imgPersonaje.setImageResource(imagenes[arrayDesordenado[0]])
 
         //Comenzamos a jugar, bajar personajes
         for (i in 0..tablero.size - 1){
@@ -211,6 +220,6 @@ class EntreUno : AppCompatActivity() {
                 }
             }
         }
-    }*/
+    }
 
 }
