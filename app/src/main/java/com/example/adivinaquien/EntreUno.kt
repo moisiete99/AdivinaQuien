@@ -55,7 +55,7 @@ class EntreUno : AppCompatActivity() {
     private lateinit var cronometro: Chronometer
 
     //Preguntas
-    //private var preguntasList:ListView = findViewById(R.id.preguntas_list)
+    //val preguntasList:ListView = findViewById(R.id.preguntas_list)
     var arr = arrayListOf<String>()
 
     var idPersonaje = 0
@@ -68,22 +68,21 @@ class EntreUno : AppCompatActivity() {
 
         setContentView(R.layout.activity_entreuno)
 
-        //leerJSON()
         init()
     }
 
-    /*fun leerJSON(){
+    fun leerJSON(){
         var json:String? = null
 
         try{
-            val inputStream: InputStream = assets.open("Personajes.json")
+            val inputStream: InputStream = assets.open("Preguntas.json")
             json = inputStream.bufferedReader().use{it.readText()}
 
             var jsonarr = JSONArray(json)
 
             for(i in 0..jsonarr.length()-1){
                 var jsonobj = jsonarr.getJSONObject(i)
-                arr.add(jsonobj.getString("nombre"))
+                arr.add(jsonobj.getString("pregunta"))
             }
 
             var adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,arr)
@@ -94,7 +93,7 @@ class EntreUno : AppCompatActivity() {
         catch (e:IOException){
             e.message?.let { Log.d("Error -> ", it) }
         }
-    }*/
+    }
 
     fun cronometro() {
         //Cronometro
@@ -192,6 +191,8 @@ class EntreUno : AppCompatActivity() {
         val random = Random()
         idPersonaje = random.nextInt(1..24)
 
+        leerJSON()
+
         cronometro()
         cargarTablero()
         cargarImagenes()
@@ -221,5 +222,4 @@ class EntreUno : AppCompatActivity() {
             }
         }
     }
-
 }

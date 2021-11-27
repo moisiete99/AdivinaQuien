@@ -1,0 +1,8 @@
+[
+  {
+    "id": "01","pregunta": "¿Es hombre?","respuesta": "hombre"
+  },
+  {
+    "id": "02","pregunta": "¿Es mujer?","respuesta":"mujer"
+  }
+]
