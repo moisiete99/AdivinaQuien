@@ -10,22 +10,25 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var btnvs2 : Button
+    lateinit var btnvs2: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //supportRequestWindowFeature(Window.FEATURE_NO_TITLE) //quitamos title Bar
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE) //quitamos title Bar
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) //forzamos orientacion horizontal
         setContentView(R.layout.activity_main)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        actionBar?.hide()
+        supportActionBar?.hide()
 
         btnvs2 = findViewById(R.id.btnVS2)
-        btnvs2.setOnClickListener{
+        btnvs2.setOnClickListener {
             println("Iniciando 2vs2")
             iniciarJuego2()
         }
     }
 
-    fun iniciarJuego2(){
-        val i = Intent(this,Entredos::class.java)
+    fun iniciarJuego2() {
+        val i = Intent(this, Entredos::class.java)
         startActivity(i)
     }
 }

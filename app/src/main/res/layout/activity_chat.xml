@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BB4430"
     tools:context=".Chat">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/btn_background"
+        android:backgroundTint="#7EBDC2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/user_layout"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/user_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

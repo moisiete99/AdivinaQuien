@@ -3,6 +3,7 @@ package com.example.adivinaquien
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -20,6 +21,11 @@ class LogIn : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
+        // Hide the status bar.
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        // Remember that you should never show the action bar if the
+        // status bar is hidden, so hide that too if necessary.
+        actionBar?.hide()
 
         supportActionBar?.hide()
 
@@ -52,7 +58,7 @@ class LogIn : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent(this@LogIn, Chat::class.java) //MainActivity::class.java
+                    val intent = Intent(this@LogIn, MainActivity::class.java) //MainActivity::class.java    Chat::class.java
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@LogIn, "Usuario no existente", Toast.LENGTH_SHORT).show()
