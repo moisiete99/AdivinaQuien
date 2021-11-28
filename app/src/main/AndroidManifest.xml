@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdivinaQuien">
         <activity
+            android:name=".Chat2"
+            android:exported="true" />
+        <activity
             android:name=".Chat"
             android:exported="true" />
         <activity
@@ -26,7 +29,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".Entredos" />
     </application>
 
