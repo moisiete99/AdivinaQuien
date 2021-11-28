@@ -23,9 +23,9 @@ class UserAdapter(val context: Context, val userList: ArrayList<User>) :
         holder.textName.text = currentUser.name
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(context,Chat2::class.java)
-            intent.putExtra("name",currentUser.name)
-            intent.putExtra("uid",FirebaseAuth.getInstance().currentUser?.uid)
+            val intent = Intent(context, Chat2::class.java)
+            intent.putExtra("name", currentUser.name)
+            intent.putExtra("uid", currentUser.uid)
 
             context.startActivity(intent)
         }
