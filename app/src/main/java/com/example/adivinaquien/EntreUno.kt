@@ -13,6 +13,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.util.*
 import kotlin.collections.ArrayList
+import android.widget.Toast
 
 class EntreUno : AppCompatActivity() {
 
@@ -55,7 +56,7 @@ class EntreUno : AppCompatActivity() {
     private lateinit var cronometro: Chronometer
 
     //Preguntas
-    //val preguntasList:ListView = findViewById(R.id.preguntas_list)
+    //var preguntasList:ListView = findViewById(R.id.preguntas_list)
     var arr = arrayListOf<String>()
 
     var idPersonaje = 0
@@ -65,6 +66,8 @@ class EntreUno : AppCompatActivity() {
         //Pantalla completa
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE) //quitamos title Bar
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) //forzamos orientacion horizontal
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        actionBar?.hide()
 
         setContentView(R.layout.activity_entreuno)
 
@@ -72,13 +75,17 @@ class EntreUno : AppCompatActivity() {
     }
 
     fun leerJSON(){
-        var json:String? = null
+        var json: String? = null
+        var jsonPersonajes: String? = null
 
         try{
             val inputStream: InputStream = assets.open("Preguntas.json")
             json = inputStream.bufferedReader().use{it.readText()}
+            val inputStreamPersonajes: InputStream = assets.open("Personajes.json")
+            jsonPersonajes = inputStreamPersonajes.bufferedReader().use { it.readText() }
 
             var jsonarr = JSONArray(json)
+            var jsonArrPersonajes = JSONArray(jsonPersonajes)
 
             for(i in 0..jsonarr.length()-1){
                 var jsonobj = jsonarr.getJSONObject(i)
@@ -89,6 +96,21 @@ class EntreUno : AppCompatActivity() {
 
             val preguntasList:ListView = findViewById(R.id.preguntas_list)
             preguntasList.adapter = adapter
+
+            preguntasList.setOnItemClickListener { parent, view, position, id ->
+                val toast = Toast.makeText(this, "$id", Toast.LENGTH_SHORT)
+                toast.show()
+
+                var jsonObj = jsonarr.getJSONObject(id.toInt())
+                for(j in 0..jsonArrPersonajes.length()-1){
+                    var jsonObjPersonajes = jsonArrPersonajes.getJSONObject(j)
+                    if(jsonObj.getString("respuesta") == jsonObjPersonajes.getString("genero")){
+                        val toast = Toast.makeText(this, "Es correcto", Toast.LENGTH_SHORT)
+                        toast.show()
+
+                    }
+                }
+            }
         }
         catch (e:IOException){
             e.message?.let { Log.d("Error -> ", it) }
