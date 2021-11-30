@@ -53,6 +53,7 @@ class Entredos : AppCompatActivity() {
     var tablero = arrayListOf<ImageButton>()
     var arrayDesordenado = arrayListOf<Int>()
     var bloqueo: Boolean = false
+    var contador: Int = -1
 
     //imagenes
     var imagenes = arrayListOf<Int>()
@@ -182,9 +183,16 @@ class Entredos : AppCompatActivity() {
             tablero[i].isEnabled = true
             //Al seleccionar, tocar
             tablero[i].setOnClickListener {
+
                 if (!bloqueo) {
                     tablero[i].setImageResource(fondo)
                     tablero[i].isEnabled = false
+                    contador++
+                    //cuando solo quede una carta (22)
+                    if (contador == tablero.size - 2) {
+                        bloqueo = true
+                        println("Has GANADO")
+                    }
                 }
             }
         }
