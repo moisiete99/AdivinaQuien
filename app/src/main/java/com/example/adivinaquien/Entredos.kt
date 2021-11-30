@@ -12,6 +12,10 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 import kotlin.collections.ArrayList
@@ -44,6 +48,9 @@ class Entredos : AppCompatActivity() {
     lateinit var img23: ImageButton
     lateinit var img24: ImageButton
     lateinit var imgPersonaje: ImageButton
+
+    lateinit var mAuth: FirebaseAuth
+    lateinit var mDbRef: DatabaseReference
 
     //botones
     //lateinit var btnConectar : Button
@@ -191,10 +198,25 @@ class Entredos : AppCompatActivity() {
                     //cuando solo quede una carta (22)
                     if (contador == tablero.size - 2) {
                         bloqueo = true
-                        println("Has GANADO")
+
+                        //añadimos a BD, partida ganada
+                        addClasificacionToDatabase()
                     }
                 }
             }
         }
+    }
+
+    private fun addClasificacionToDatabase() {
+        mAuth = FirebaseAuth.getInstance() //intancia para autentificacion
+        mDbRef = FirebaseDatabase.getInstance().getReference() //instancia para BD
+        val uid: String = mAuth.currentUser?.uid!!
+
+        val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm:ss") //obtenemos fecha y hora
+        val currentDate = sdf.format(Date())
+        val ganador: String = "Ganaste el: " + currentDate
+        println(ganador)
+
+        mDbRef.child("clasificacion").child(uid).setValue(ganador)
     }
 }
