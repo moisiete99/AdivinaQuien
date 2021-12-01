@@ -195,10 +195,10 @@ class EntreUno : AppCompatActivity() {
 
     fun cronometro() {
         //Cronometro
-
-        /*cronometro.base = SystemClock.elapsedRealtime()
+        cronometro = findViewById(R.id.cronometro)
+        cronometro.base = SystemClock.elapsedRealtime()
         cronometro.start()
-        btnIniciar.setVisibility(View.GONE)*/
+//        btnIniciar.setVisibility(View.GONE)
         /*btnIniciar = findViewById(R.id.btnIniciar)
         cronometro = findViewById(R.id.cronometro)
         btnIniciar.setOnClickListener {
@@ -294,7 +294,7 @@ class EntreUno : AppCompatActivity() {
 
         leerJSON()
 
-        cronometro()
+        //cronometro()
         cargarTablero()
         cargarImagenes()
         arrayDesordenado = barajar(imagenes.size)
