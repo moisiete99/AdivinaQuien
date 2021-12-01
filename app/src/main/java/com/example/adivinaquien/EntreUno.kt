@@ -137,6 +137,8 @@ class EntreUno : AppCompatActivity() {
 
             preguntasList.setOnItemClickListener { parent, view, position, id ->
 
+                cronometro()
+
                 for(i in 0..jsonArrPreguntas.length()-1){
                     var jsonObjPregunta = jsonArrPreguntas.getJSONObject(i)
 
@@ -193,13 +195,17 @@ class EntreUno : AppCompatActivity() {
 
     fun cronometro() {
         //Cronometro
-        btnIniciar = findViewById(R.id.btnIniciar)
+
+        /*cronometro.base = SystemClock.elapsedRealtime()
+        cronometro.start()
+        btnIniciar.setVisibility(View.GONE)*/
+        /*btnIniciar = findViewById(R.id.btnIniciar)
         cronometro = findViewById(R.id.cronometro)
         btnIniciar.setOnClickListener {
             cronometro.base = SystemClock.elapsedRealtime()
             cronometro.start()
             btnIniciar.setVisibility(View.GONE)
-        }
+        }*/
     }
 
     fun Random.nextInt(range: IntRange): Int{
