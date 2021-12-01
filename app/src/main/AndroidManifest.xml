@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdivinaQuien">
         <activity
+            android:name=".ClasificacionActivity"
+            android:exported="true" />
+        <activity
             android:name=".Chat2"
             android:exported="true" />
         <activity

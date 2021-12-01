@@ -12,6 +12,8 @@ import android.widget.ImageButton
 class MainActivity : AppCompatActivity() {
 
     lateinit var btnvs2: ImageButton
+    lateinit var btnClasificacion: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE) //quitamos title Bar
@@ -22,14 +24,26 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         btnvs2 = findViewById(R.id.btnVS2)
+        btnClasificacion = findViewById(R.id.btnClasificacion)
+
         btnvs2.setOnClickListener {
             println("Iniciando 2vs2")
             iniciarJuego2()
+        }
+
+        btnClasificacion.setOnClickListener {
+            println("Iniciando clasificaciones")
+            iniciarClasificacion()
         }
     }
 
     fun iniciarJuego2() {
         val i = Intent(this, Entredos::class.java)
+        startActivity(i)
+    }
+
+    fun iniciarClasificacion() {
+        val i = Intent(this, ClasificacionActivity::class.java)
         startActivity(i)
     }
 }
