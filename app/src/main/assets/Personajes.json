@@ -2,51 +2,51 @@
   {
     "id":"01","nombre": "Esther","genero": "mujer","piel": "clara",
     "cabello": "castaño","lentes": "no","bigote": "no",
-    "barba": "no","corbata": "no","playera": "verde","num": "01"
+    "barba": "no","corbata": "no","playera": "verde"
   },
   {
     "id":"02","nombre": "Roger","genero": "hombre","piel": "oscura",
     "cabello": "castaño","lentes": "si","bigote": "no",
-    "barba": "si","corbata": "no","playera": "amarilla","num": "02"
+    "barba": "si","corbata": "no","playera": "amarilla"
   },
   {
     "id":"03","nombre": "Sarai","genero": "mujer","piel": "morena",
     "cabello": "castaño","lentes": "no","bigote": "no",
-    "barba": "no","corbata": "no","playera": "azul","num": "03"
+    "barba": "no","corbata": "no","playera": "azul"
   },
   {
     "id":"04","nombre": "Tino","genero": "hombre","piel": "clara",
     "cabello": "rubio","lentes": "no","bigote": "no",
-    "barba": "no","corbata": "no","playera": "azul","num": "04"
+    "barba": "no","corbata": "no","playera": "azul"
   },
   {
     "id":"05","nombre": "Otto","genero": "hombre","piel": "morena",
     "cabello": "castaño","lentes": "no","bigote": "no",
-    "barba": "si","corbata": "no","playera": "azul","num": "05"
+    "barba": "si","corbata": "no","playera": "azul"
   },
   {
     "id":"06","nombre": "Lola","genero": "mujer","piel": "clara",
     "cabello": "pelirrojo","lentes": "no","bigote": "no",
-    "barba": "no","corbata": "no","playera": "azul","num": "06"
+    "barba": "no","corbata": "no","playera": "azul"
   },
   {
     "id":"08","nombre": "Marcos","genero": "hombre","piel": "morena",
     "cabello": "castaño","lentes": "no","bigote": "si",
-    "barba": "no","corbata": "no","playera": "azul","num": "07"
+    "barba": "no","corbata": "no","playera": "azul"
   },
   {
     "id":"09","nombre": "Africa","genero": "mujer","piel": "clara",
     "cabello": "oscuro","lentes": "no","bigote": "no",
-    "barba": "no","corbata": "no","playera": "rosa","num": "08"
+    "barba": "no","corbata": "no","playera": "rosa"
   },
   {
     "id":"10","nombre": "Thania","genero": "mujer","piel": "morena",
     "cabello": "castaño","lentes": "no","bigote": "no",
-    "barba": "no","corbata": "no","playera": "azul","num": "09"
+    "barba": "no","corbata": "no","playera": "azul"
   },
   {
     "id":"11","nombre": "Beth","genero": "hombre","piel": "morena",
     "cabello": "castaño","lentes": "no","bigote": "no",
-    "barba": "no","corbata": "si","playera": "azul","num": "10"
+    "barba": "no","corbata": "si","playera": "azul"
   }
 ]

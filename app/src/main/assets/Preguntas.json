@@ -1,8 +1,17 @@
 [
   {
-    "id": "01","pregunta": "¿Es hombre?","respuesta": "hombre"
+    "id": "00","pregunta": "¿Es hombre?","respuesta": "hombre"
   },
   {
-    "id": "02","pregunta": "¿Es mujer?","respuesta":"mujer"
+    "id": "01","pregunta": "¿Es mujer?","respuesta":"mujer"
+  },
+  {
+    "id": "02","pregunta": "¿Su piel es clara?","respuesta":"clara"
+  },
+  {
+    "id": "03","pregunta": "¿Su piel es oscura?","respuesta":"oscura"
+  },
+  {
+    "id": "04","pregunta": "¿SU piel es morena?","respuesta":"morena"
   }
 ]

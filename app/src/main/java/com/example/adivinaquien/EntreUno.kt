@@ -1,6 +1,7 @@
 package com.example.adivinaquien
 
 import android.content.pm.ActivityInfo
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -59,7 +60,8 @@ class EntreUno : AppCompatActivity() {
     //var preguntasList:ListView = findViewById(R.id.preguntas_list)
     var arr = arrayListOf<String>()
 
-    var idPersonaje = 0
+    var personajeSelec: Personaje? = null
+    var preguntaSelec: Pregunta? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,22 +76,58 @@ class EntreUno : AppCompatActivity() {
         init()
     }
 
-    fun leerJSON(){
-        var json: String? = null
+    fun asignarPersonaje(){
+        var idPersonaje = 0
         var jsonPersonajes: String? = null
+
+        val random = Random()
+        idPersonaje = random.nextInt(1..24)
+        println("ID: " + idPersonaje)
+
+        val inputStreamPersonajes: InputStream = assets.open("Personajes.json")
+        jsonPersonajes = inputStreamPersonajes.bufferedReader().use { it.readText() }
+
+        var jsonArrPersonajes = JSONArray(jsonPersonajes)
+
+        for(i in 0..jsonArrPersonajes.length()-1){
+            var jsonObjPersonaje = jsonArrPersonajes.getJSONObject(i)
+            if(jsonObjPersonaje.getString("id").toInt() == idPersonaje){
+                personajeSelec = Personaje(
+                    jsonObjPersonaje.getString("id").toInt(),
+                    jsonObjPersonaje.getString("nombre"),
+                    jsonObjPersonaje.getString("genero"),
+                    jsonObjPersonaje.getString("piel"),
+                    jsonObjPersonaje.getString("cabello"),
+                    jsonObjPersonaje.getString("lentes"),
+                    jsonObjPersonaje.getString("bigote"),
+                    jsonObjPersonaje.getString("barba"),
+                    jsonObjPersonaje.getString("corbata"),
+                    jsonObjPersonaje.getString("playera")
+                )
+            }
+        }
+
+        println("Personaje asignado: " + personajeSelec?.nombre)
+    }
+
+    fun leerJSON(){
+        var jsonPreguntas: String? = null
+        var jsonPersonajes: String? = null
+
+        //println("Personaje asignado 3: " + personajeSelec?.nombre)
 
         try{
             val inputStream: InputStream = assets.open("Preguntas.json")
-            json = inputStream.bufferedReader().use{it.readText()}
+            jsonPreguntas = inputStream.bufferedReader().use{it.readText()}
             val inputStreamPersonajes: InputStream = assets.open("Personajes.json")
             jsonPersonajes = inputStreamPersonajes.bufferedReader().use { it.readText() }
 
-            var jsonarr = JSONArray(json)
+            var jsonArrPreguntas = JSONArray(jsonPreguntas)
             var jsonArrPersonajes = JSONArray(jsonPersonajes)
 
-            for(i in 0..jsonarr.length()-1){
-                var jsonobj = jsonarr.getJSONObject(i)
-                arr.add(jsonobj.getString("pregunta"))
+            for(i in 0..jsonArrPreguntas.length()-1){
+                var jsonObjPregunta = jsonArrPreguntas.getJSONObject(i)
+                arr.add(jsonObjPregunta.getString("pregunta"))
             }
 
             var adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,arr)
@@ -98,18 +136,54 @@ class EntreUno : AppCompatActivity() {
             preguntasList.adapter = adapter
 
             preguntasList.setOnItemClickListener { parent, view, position, id ->
-                val toast = Toast.makeText(this, "$id", Toast.LENGTH_SHORT)
-                toast.show()
 
-                var jsonObj = jsonarr.getJSONObject(id.toInt())
+                for(i in 0..jsonArrPreguntas.length()-1){
+                    var jsonObjPregunta = jsonArrPreguntas.getJSONObject(i)
+
+                    if(jsonObjPregunta.getString("id").toInt() == id.toInt()){
+                        preguntaSelec = Pregunta(
+                            jsonObjPregunta.getString("id").toInt(),
+                            jsonObjPregunta.getString("pregunta"),
+                            jsonObjPregunta.getString("respuesta")
+                        )
+                    }
+                }
+
+                val toast = Toast.makeText(this, "${preguntaSelec?.respuesta}", Toast.LENGTH_SHORT)
+                toast.show()
+                val toast2 = Toast.makeText(this, "${personajeSelec?.genero}", Toast.LENGTH_SHORT)
+                toast2.show()
+
+                if(preguntaSelec?.respuesta == personajeSelec?.genero){
+                    view.setBackgroundColor(Color.GREEN)
+                }
+                else{
+                    view.setBackgroundColor(Color.RED)
+                }
+                
+                /*for(i in 0..jsonArrPreguntas.length()-1){
+                    var jsonObjPregunta = jsonArrPreguntas.getJSONObject(i)
+
+                    val toast = Toast.makeText(this, "${jsonObjPregunta.getString("respuesta")}", Toast.LENGTH_SHORT)
+                    toast.show()
+                }
+
+            var jsonObj = jsonArrPreguntas.getJSONObject(id.toInt())
                 for(j in 0..jsonArrPersonajes.length()-1){
                     var jsonObjPersonajes = jsonArrPersonajes.getJSONObject(j)
+
+
+                    if(jsonObjPreguntas.getString("genero") == personajeSelec?.genero){
+                            val toast = Toast.makeText(this, "Es correcto", Toast.LENGTH_SHORT)
+                            toast.show()
+
+                    }
                     if(jsonObj.getString("respuesta") == jsonObjPersonajes.getString("genero")){
                         val toast = Toast.makeText(this, "Es correcto", Toast.LENGTH_SHORT)
                         toast.show()
 
                     }
-                }
+                }*/
             }
         }
         catch (e:IOException){
@@ -210,8 +284,7 @@ class EntreUno : AppCompatActivity() {
 
     fun init(){
         //Asignamos el id del personaje
-        val random = Random()
-        idPersonaje = random.nextInt(1..24)
+        asignarPersonaje()
 
         leerJSON()
 
@@ -219,7 +292,7 @@ class EntreUno : AppCompatActivity() {
         cargarTablero()
         cargarImagenes()
         arrayDesordenado = barajar(imagenes.size)
-        println("Array Desordenado: " +arrayDesordenado.size)
+        println("Array Desordenado: " + arrayDesordenado.size)
 
         //cargamos personajes aleatoriamente en el tablero
         for (i in 0..tablero.size - 1){
