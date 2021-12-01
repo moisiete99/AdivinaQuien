@@ -49,9 +49,9 @@ class ClasificacionActivity : AppCompatActivity() {
                     val fechaBD = postSnapshot.value.toString()
 
                     println(postSnapshot)
-                    if (postSnapshot.key.toString() == myuid) { //mostramos de nuestro propio usuario
-                        datosList.add(fechaBD)
-                    }
+                    //if (postSnapshot.key.toString() == myuid) { //mostramos de nuestro propio usuario
+                        datosList.add(fechaBD) //añadimos cada clasificacion de usuario
+                    //}
                 }
 
                 println("datosList: " + datosList.size)//2

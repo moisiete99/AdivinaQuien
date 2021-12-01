@@ -13,8 +13,8 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
@@ -211,12 +211,37 @@ class Entredos : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance() //intancia para autentificacion
         mDbRef = FirebaseDatabase.getInstance().getReference() //instancia para BD
         val uid: String = mAuth.currentUser?.uid!!
+        var nombre : String
 
-        val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm:ss") //obtenemos fecha y hora
+        //obtenemos name user de BD
+        mDbRef.child("user").child(uid).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                nombre = snapshot.child("name").value.toString()//mi nombre
+
+                println("NOmBRE USER: " + nombre)
+
+                val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm:ss") //obtenemos fecha y hora
+                val currentDate = sdf.format(Date())
+                val ganador: String = nombre + " ganó el: " + currentDate
+                println(ganador)
+
+                mDbRef.child("clasificacion").child(uid).setValue(ganador)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+
+
+        //println("NOmBRE USER: " + nombre)
+
+        /*val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm:ss") //obtenemos fecha y hora
         val currentDate = sdf.format(Date())
         val ganador: String = "Ganaste el: " + currentDate
         println(ganador)
 
-        mDbRef.child("clasificacion").child(uid).setValue(ganador)
+        mDbRef.child("clasificacion").child(uid).setValue(ganador)*/
     }
 }
