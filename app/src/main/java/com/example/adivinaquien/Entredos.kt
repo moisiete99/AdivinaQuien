@@ -199,6 +199,8 @@ class Entredos : AppCompatActivity() {
                     if (contador == tablero.size - 2) {
                         bloqueo = true
 
+                        setContentView(R.layout.ganaste) //mostramos img de You Win
+
                         //añadimos a BD, partida ganada
                         addClasificacionToDatabase()
                     }
