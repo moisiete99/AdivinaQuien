@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdivinaQuien">
         <activity
+            android:name=".EntreUno"
+            android:exported="true" />
+        <activity
             android:name=".ClasificacionActivity"
             android:exported="true" />
         <activity

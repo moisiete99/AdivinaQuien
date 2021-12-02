@@ -1,0 +1,65 @@
+[
+  {
+    "id": "00","pregunta": "¿Es hombre?","respuesta": "hombre"
+  },
+  {
+    "id": "01","pregunta": "¿Es mujer?","respuesta":"mujer"
+  },
+  {
+    "id": "02","pregunta": "¿Su piel es clara?","respuesta":"clara"
+  },
+  {
+    "id": "03","pregunta": "¿Su piel es oscura?","respuesta":"oscura"
+  },
+  {
+    "id": "04","pregunta": "¿Su piel es morena?","respuesta":"morena"
+  },
+  {
+    "id": "05","pregunta": "¿Su cabello es castaño?","respuesta": "castaño"
+  },
+  {
+    "id": "06","pregunta": "¿Su cabello es rubio?","respuesta": "rubio"
+  },
+  {
+    "id": "07","pregunta": "¿Su cabello es pelirrojo?","respuesta": "pelirrojo"
+  },
+  {
+    "id": "08","pregunta": "¿Su cabello es oscuro?","respuesta": "oscuro"
+  },
+  {
+    "id": "09","pregunta": "¿Usa lentes?","respuesta": "si"
+  },
+  {
+    "id": "10","pregunta": "¿No usa lentes?","respuesta": "no"
+  },
+  {
+    "id": "11","pregunta": "¿Tiene bigote?","respuesta": "si"
+  },
+  {
+    "id": "12","pregunta": "¿No tiene bigote?","respuesta": "no"
+  },
+  {
+    "id": "13","pregunta": "¿Tiene barba?","respuesta": "si"
+  },
+  {
+    "id": "14","pregunta": "¿No tiene barba?","respuesta": "no"
+  },
+  {
+    "id": "15","pregunta": "¿Usa corbata?","respuesta": "si"
+  },
+  {
+    "id": "16","pregunta": "¿No usa corbata?","respuesta": "no"
+  },
+  {
+    "id": "17","pregunta": "¿Su playera es verde?","respuesta": "verde"
+  },
+  {
+    "id": "18","pregunta": "¿Su playera es amarilla?","respuesta": "amarilla"
+  },
+  {
+    "id": "19","pregunta": "¿Su playera es azul?","respuesta": "azul"
+  },
+  {
+    "id": "20","pregunta": "¿Su playera es rosa?","respuesta": "rosa"
+  }
+]

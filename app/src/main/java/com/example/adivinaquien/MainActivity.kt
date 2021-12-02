@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var btnvs2: ImageButton
     lateinit var btnClasificacion: ImageButton
+    lateinit var btnvs1: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,13 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         btnvs2 = findViewById(R.id.btnVS2)
+        btnvs1 = findViewById(R.id.btnVS1)
         btnClasificacion = findViewById(R.id.btnClasificacion)
+
+        btnvs1.setOnClickListener {
+            println("Iniciando 2vs2")
+            iniciarJuego1()
+        }
 
         btnvs2.setOnClickListener {
             println("Iniciando 2vs2")
@@ -35,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             println("Iniciando clasificaciones")
             iniciarClasificacion()
         }
+    }
+
+    fun iniciarJuego1() {
+        val i = Intent(this, EntreUno::class.java)
+        startActivity(i)
     }
 
     fun iniciarJuego2() {

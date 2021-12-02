@@ -34,7 +34,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnVS1"
             android:layout_width="259dp"
             android:layout_height="79dp"
             android:translationX="70dp"
