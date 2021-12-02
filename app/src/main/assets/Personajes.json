@@ -2,7 +2,8 @@
   {
     "id":"01","nombre": "Esther","genero": "mujer","piel": "clara",
     "cabello": "castaño","lentes": "no","bigote": "no",
-    "barba": "no","corbata": "no","playera": "verde"
+    "barba": "no","corbata": "no","playera": "verde",
+    "idDes": ""
   },
   {
     "id":"02","nombre": "Roger","genero": "hombre","piel": "oscura",
@@ -30,23 +31,93 @@
     "barba": "no","corbata": "no","playera": "azul"
   },
   {
-    "id":"08","nombre": "Marcos","genero": "hombre","piel": "morena",
+    "id":"07","nombre": "Marcos","genero": "hombre","piel": "morena",
     "cabello": "castaño","lentes": "no","bigote": "si",
     "barba": "no","corbata": "no","playera": "azul"
   },
   {
-    "id":"09","nombre": "Africa","genero": "mujer","piel": "clara",
+    "id":"08","nombre": "Africa","genero": "mujer","piel": "clara",
     "cabello": "oscuro","lentes": "no","bigote": "no",
     "barba": "no","corbata": "no","playera": "rosa"
   },
   {
-    "id":"10","nombre": "Thania","genero": "mujer","piel": "morena",
+    "id":"09","nombre": "Thania","genero": "mujer","piel": "morena",
     "cabello": "castaño","lentes": "no","bigote": "no",
     "barba": "no","corbata": "no","playera": "azul"
   },
   {
-    "id":"11","nombre": "Beth","genero": "hombre","piel": "morena",
+    "id":"10","nombre": "Beth","genero": "hombre","piel": "morena",
     "cabello": "castaño","lentes": "no","bigote": "no",
     "barba": "no","corbata": "si","playera": "azul"
+  },
+  {
+    "id":"11","nombre": "Orion","genero": "hombre","piel": "clara",
+    "cabello": "oscuro","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "si","playera": "azul"
+  },
+  {
+    "id":"12","nombre": "Mika","genero": "mujer","piel": "oscura",
+    "cabello": "castaño","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "no","playera": "amarilla"
+  },
+  {
+    "id":"13","nombre": "Nuth","genero": "mujer","piel": "morena",
+    "cabello": "castaño","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "no","playera": "rosa"
+  },
+  {
+    "id":"14","nombre": "Ra","genero": "hombre","piel": "clara",
+    "cabello": "castaño","lentes": "no","bigote": "si",
+    "barba": "si","corbata": "no","playera": "azul"
+  },
+  {
+    "id":"15","nombre": "Isaac","genero": "hombre","piel": "clara",
+    "cabello": "rubio","lentes": "si","bigote": "no",
+    "barba": "no","corbata": "si","playera": "verde"
+  },
+  {
+    "id":"16","nombre": "Carmen","genero": "mujer","piel": "clara",
+    "cabello": "rubio","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "no","playera": "azul"
+  },
+  {
+    "id":"17","nombre": "Ramses","genero": "hombre","piel": "oscura",
+    "cabello": "oscuro","lentes": "no","bigote": "no",
+    "barba": "si","corbata": "no","playera": "roja"
+  },
+  {
+    "id":"18","nombre": "Puca","genero": "mujer","piel": "morena",
+    "cabello": "castaño","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "no","playera": "azul"
+  },
+  {
+    "id":"19","nombre": "Goku","genero": "hombre","piel": "clara",
+    "cabello": "no","lentes": "no","bigote": "si",
+    "barba": "si","corbata": "no","playera": "azul"
+  },
+  {
+    "id":"20","nombre": "Bielsa","genero": "mujer","piel": "clara",
+    "cabello": "oscuro","lentes": "si","bigote": "no",
+    "barba": "no","corbata": "no","playera": "roja"
+  },
+  {
+    "id":"21","nombre": "Gea","genero": "mujer","piel": "clara",
+    "cabello": "rubio","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "no","playera": "rosa"
+  },
+  {
+    "id":"22","nombre": "Chica","genero": "mujer","piel": "oscura",
+    "cabello": "castaño","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "no","playera": "morada"
+  },
+  {
+    "id":"23","nombre": "Xina","genero": "mujer","piel": "morena",
+    "cabello": "castaño","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "no","playera": "azul"
+  },
+  {
+    "id":"24","nombre": "Tot","genero": "hombre","piel": "clara",
+    "cabello": "oscuro","lentes": "no","bigote": "no",
+    "barba": "no","corbata": "no","playera": "azul"
   }
 ]

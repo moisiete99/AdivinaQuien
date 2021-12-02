@@ -14,7 +14,6 @@ import java.io.IOException
 import java.io.InputStream
 import java.util.*
 import kotlin.collections.ArrayList
-import android.widget.Toast
 
 class EntreUno : AppCompatActivity() {
 
@@ -47,17 +46,16 @@ class EntreUno : AppCompatActivity() {
     var tablero = arrayListOf<ImageButton>()
     var arrayDesordenado = arrayListOf<Int>()
     var bloqueo : Boolean = false
+    var contador: Int = -1
 
     //imagenes
     var imagenes = arrayListOf<Int>()
     var fondo : Int = 0
 
     //Cronometro
-    private lateinit var btnIniciar: Button
     private lateinit var cronometro: Chronometer
 
     //Preguntas
-    //var preguntasList:ListView = findViewById(R.id.preguntas_list)
     var arr = arrayListOf<String>()
 
     var personajeSelec: Personaje? = null
@@ -137,8 +135,6 @@ class EntreUno : AppCompatActivity() {
 
             preguntasList.setOnItemClickListener { parent, view, position, id ->
 
-                cronometro()
-
                 for(i in 0..jsonArrPreguntas.length()-1){
                     var jsonObjPregunta = jsonArrPreguntas.getJSONObject(i)
 
@@ -151,41 +147,90 @@ class EntreUno : AppCompatActivity() {
                     }
                 }
 
-                val toast = Toast.makeText(this, "${preguntaSelec?.respuesta}", Toast.LENGTH_SHORT)
+                /*val toast = Toast.makeText(this, "${preguntaSelec?.respuesta}", Toast.LENGTH_SHORT)
                 toast.show()
                 val toast2 = Toast.makeText(this, "${personajeSelec?.genero}", Toast.LENGTH_SHORT)
                 toast2.show()
 
-                if(preguntaSelec?.respuesta == personajeSelec?.genero){
-                    view.setBackgroundColor(Color.GREEN)
-                }
-                else{
-                    view.setBackgroundColor(Color.RED)
-                }
-                
-                /*for(i in 0..jsonArrPreguntas.length()-1){
-                    var jsonObjPregunta = jsonArrPreguntas.getJSONObject(i)
+                val toast3 = Toast.makeText(this, "${preguntaSelec?.respuesta}", Toast.LENGTH_SHORT)
+                toast3.show()
+                val toast4 = Toast.makeText(this, "${personajeSelec?.piel}", Toast.LENGTH_SHORT)
+                toast4.show()*/
 
-                    val toast = Toast.makeText(this, "${jsonObjPregunta.getString("respuesta")}", Toast.LENGTH_SHORT)
-                    toast.show()
-                }
-
-            var jsonObj = jsonArrPreguntas.getJSONObject(id.toInt())
-                for(j in 0..jsonArrPersonajes.length()-1){
-                    var jsonObjPersonajes = jsonArrPersonajes.getJSONObject(j)
-
-
-                    if(jsonObjPreguntas.getString("genero") == personajeSelec?.genero){
-                            val toast = Toast.makeText(this, "Es correcto", Toast.LENGTH_SHORT)
-                            toast.show()
-
+                when(id.toInt()){
+                    0, 1 ->{
+                        println("Entra genero")
+                        if(preguntaSelec?.respuesta == personajeSelec?.genero){
+                            view.setBackgroundColor(Color.GREEN)
+                        }
+                        else{
+                            view.setBackgroundColor(Color.RED)
+                        }
                     }
-                    if(jsonObj.getString("respuesta") == jsonObjPersonajes.getString("genero")){
-                        val toast = Toast.makeText(this, "Es correcto", Toast.LENGTH_SHORT)
-                        toast.show()
-
+                    2,3,4 ->{
+                        println("Entra piel")
+                        if(preguntaSelec?.respuesta == personajeSelec?.piel){
+                            view.setBackgroundColor(Color.GREEN)
+                        }
+                        else{
+                            view.setBackgroundColor(Color.RED)
+                        }
                     }
-                }*/
+                    5,6,7,8 ->{
+                        println("Entra cabello")
+                        if(preguntaSelec?.respuesta == personajeSelec?.cabello){
+                            view.setBackgroundColor(Color.GREEN)
+                        }
+                        else{
+                            view.setBackgroundColor(Color.RED)
+                        }
+                    }
+                    9,10 ->{
+                        println("Entra lentes")
+                        if(preguntaSelec?.respuesta == personajeSelec?.lentes){
+                            view.setBackgroundColor(Color.GREEN)
+                        }
+                        else{
+                            view.setBackgroundColor(Color.RED)
+                        }
+                    }
+                    11,12 ->{
+                        println("Entra bigote")
+                        if(preguntaSelec?.respuesta == personajeSelec?.bigote){
+                            view.setBackgroundColor(Color.GREEN)
+                        }
+                        else{
+                            view.setBackgroundColor(Color.RED)
+                        }
+                    }
+                    13,14 ->{
+                        println("Entra barba")
+                        if(preguntaSelec?.respuesta == personajeSelec?.barba){
+                            view.setBackgroundColor(Color.GREEN)
+                        }
+                        else{
+                            view.setBackgroundColor(Color.RED)
+                        }
+                    }
+                    15,16 ->{
+                        println("Entra corbata")
+                        if(preguntaSelec?.respuesta == personajeSelec?.corbata){
+                            view.setBackgroundColor(Color.GREEN)
+                        }
+                        else{
+                            view.setBackgroundColor(Color.RED)
+                        }
+                    }
+                    17,18,19,20 -> {
+                        println("Entra playera")
+                        if(preguntaSelec?.respuesta == personajeSelec?.playera){
+                            view.setBackgroundColor(Color.GREEN)
+                        }
+                        else{
+                            view.setBackgroundColor(Color.RED)
+                        }
+                    }
+                }
             }
         }
         catch (e:IOException){
@@ -198,18 +243,25 @@ class EntreUno : AppCompatActivity() {
         cronometro = findViewById(R.id.cronometro)
         cronometro.base = SystemClock.elapsedRealtime()
         cronometro.start()
-//        btnIniciar.setVisibility(View.GONE)
-        /*btnIniciar = findViewById(R.id.btnIniciar)
-        cronometro = findViewById(R.id.cronometro)
-        btnIniciar.setOnClickListener {
-            cronometro.base = SystemClock.elapsedRealtime()
-            cronometro.start()
-            btnIniciar.setVisibility(View.GONE)
-        }*/
     }
 
     fun Random.nextInt(range: IntRange): Int{
         return range.start + nextInt(range.last - range.start)
+    }
+
+    fun vincular(){
+        var jsonPersonajes: String? = null
+
+        val inputStreamPersonajes: InputStream = assets.open("Personajes.json")
+        jsonPersonajes = inputStreamPersonajes.bufferedReader().use { it.readText() }
+
+        var jsonArrPersonajes = JSONArray(jsonPersonajes)
+
+        for(i in 0..jsonArrPersonajes.length()-1){
+            var jsonObjPersonaje = jsonArrPersonajes.getJSONObject(i)
+
+            jsonObjPersonaje.put("idDes", arrayDesordenado[i])
+        }
     }
 
     fun cargarTablero() {
@@ -248,28 +300,28 @@ class EntreUno : AppCompatActivity() {
     }
 
     fun cargarImagenes(){
-        imagenes.add(R.drawable.esther01)
+        imagenes.add(R.drawable.esther)
         imagenes.add(R.drawable.roger02)
         imagenes.add(R.drawable.sarai03)
         imagenes.add(R.drawable.tino04)
         imagenes.add(R.drawable.otto05)
-        imagenes.add(R.drawable.lola06)
-        imagenes.add(R.drawable.marcos07)
-        imagenes.add(R.drawable.africa08)
+        imagenes.add(R.drawable.lola)
+        imagenes.add(R.drawable.marcos)
+        imagenes.add(R.drawable.africa)
         imagenes.add(R.drawable.thania09)
-        imagenes.add(R.drawable.beth10)
+        imagenes.add(R.drawable.beth)
         imagenes.add(R.drawable.orion11)
         imagenes.add(R.drawable.mika12)
         imagenes.add(R.drawable.nuth13)
         imagenes.add(R.drawable.ra14)
-        imagenes.add(R.drawable.isaac15)
-        imagenes.add(R.drawable.carmen16)
+        imagenes.add(R.drawable.isaac)
+        imagenes.add(R.drawable.carmen)
         imagenes.add(R.drawable.ramses17)
         imagenes.add(R.drawable.puca18)
-        imagenes.add(R.drawable.goku19)
-        imagenes.add(R.drawable.bielsa20)
-        imagenes.add(R.drawable.gea21)
-        imagenes.add(R.drawable.chica22)
+        imagenes.add(R.drawable.goku)
+        imagenes.add(R.drawable.bielsa)
+        imagenes.add(R.drawable.gea)
+        imagenes.add(R.drawable.chica)
         imagenes.add(R.drawable.xina23)
         imagenes.add(R.drawable.tot24)
 
@@ -291,10 +343,9 @@ class EntreUno : AppCompatActivity() {
     fun init(){
         //Asignamos el id del personaje
         asignarPersonaje()
-
         leerJSON()
+        cronometro()
 
-        //cronometro()
         cargarTablero()
         cargarImagenes()
         arrayDesordenado = barajar(imagenes.size)
@@ -307,9 +358,6 @@ class EntreUno : AppCompatActivity() {
             //tablero[i].setImageResource(fondo)
         }
 
-        //cargamos personaje aleatorio de jugador, el de arrayDesordenado pos 0
-        //imgPersonaje.setImageResource(imagenes[arrayDesordenado[0]])
-
         //Comenzamos a jugar, bajar personajes
         for (i in 0..tablero.size - 1){
             //habilitamos tablero, botones
@@ -319,6 +367,12 @@ class EntreUno : AppCompatActivity() {
                 if(!bloqueo){
                     tablero[i].setImageResource(fondo)
                     tablero[i].isEnabled = false
+                    contador++
+
+                    if(contador == tablero.size - 2){
+                        bloqueo = true
+
+                    }
                 }
             }
         }

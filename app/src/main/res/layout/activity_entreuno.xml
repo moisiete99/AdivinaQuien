@@ -22,7 +22,7 @@
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/esther01" />
+                android:src="@drawable/esther" />
             <ImageButton
                 android:id="@+id/btnP2"
                 android:layout_width="80dp"
@@ -57,7 +57,7 @@
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/lola06" />
+                android:src="@drawable/lola" />
         </TableRow>
 
         <TableRow
@@ -71,14 +71,14 @@
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/marcos07" />
+                android:src="@drawable/marcos" />
             <ImageButton
                 android:id="@+id/btnP8"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/africa08" />
+                android:src="@drawable/africa" />
             <ImageButton
                 android:id="@+id/btnP9"
                 android:layout_width="80dp"
@@ -92,7 +92,7 @@
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/beth10" />
+                android:src="@drawable/beth" />
             <ImageButton
                 android:id="@+id/btnP11"
                 android:layout_width="80dp"
@@ -134,14 +134,14 @@
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/isaac15" />
+                android:src="@drawable/isaac" />
             <ImageButton
                 android:id="@+id/btnP16"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/carmen16" />
+                android:src="@drawable/carmen" />
             <ImageButton
                 android:id="@+id/btnP17"
                 android:layout_width="80dp"
@@ -167,28 +167,28 @@
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/goku19" />
+                android:src="@drawable/goku" />
             <ImageButton
                 android:id="@+id/btnP20"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bielsa20" />
+                android:src="@drawable/bielsa" />
             <ImageButton
                 android:id="@+id/btnP21"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/gea21" />
+                android:src="@drawable/gea" />
             <ImageButton
                 android:id="@+id/btnP22"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:layout_column="0"
                 android:scaleType="centerCrop"
-                android:src="@drawable/chica22" />
+                android:src="@drawable/chica" />
             <ImageButton
                 android:id="@+id/btnP23"
                 android:layout_width="80dp"
@@ -211,11 +211,11 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical">
-        <Button
+        <!--<Button
             android:id="@+id/btnIniciar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Iniciar"/>
+            android:text="Iniciar"/>-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -233,7 +233,7 @@
         </LinearLayout>
         <ListView
             android:id="@+id/preguntas_list"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
