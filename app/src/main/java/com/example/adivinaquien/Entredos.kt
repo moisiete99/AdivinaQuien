@@ -213,7 +213,7 @@ class Entredos : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance() //intancia para autentificacion
         mDbRef = FirebaseDatabase.getInstance().getReference() //instancia para BD
         val uid: String = mAuth.currentUser?.uid!!
-        var nombre : String
+        var nombre: String
 
         //obtenemos name user de BD
         mDbRef.child("user").child(uid).addValueEventListener(object : ValueEventListener {
